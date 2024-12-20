@@ -1,0 +1,972 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+html{
+  scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+}
+
+p {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Responsive Navbar */
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #2c3e50;
+  width: 100vw; 
+  max-width: 100%; 
+  padding: 1rem;
+  box-sizing: border-box;
+  position: static;
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  max-width: 150px;
+  width: 90%;
+  height: auto;
+  object-fit: contain;
+}
+
+nav .menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+nav .menu li {
+  margin: 0.5rem 0;
+}
+
+nav .menu li a {
+  text-decoration: none;
+  color: rgb(230, 230, 230);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+}
+
+nav .menu li a:hover {
+  color: rgb(224, 225, 225);
+  background-color: rgba(164, 165, 170, 0.789);
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  color: rgb(238, 238, 238);
+  background-color: rgba(158, 158, 159, 0.859);
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
+  border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Slideshow Container */
+.container {
+  position: relative;
+  width: 100%;
+  max-height: 70vh;
+  overflow: hidden;
+}
+
+.mySlides {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.mySlides img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.textCentered{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #f2f2f2;
+}
+.textCentered h1{
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.textCentered button {
+  padding: 10px 20px;
+  margin-top: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(209, 209, 209, 0.86);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.textCentered button:hover {
+  background-color: rgb(23, 85, 139);
+  transform: scale(1.1);
+}
+
+.textCentered button a {
+  text-decoration: none;
+  color: white;
+}
+
+
+/* profil sekolah */
+.profil_sekolah{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    width: 90%;
+    max-width: 1200px;
+    padding-top: 0px;
+    margin: 100px auto
+}
+.profil_sekolah .text_profil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.judul_text{
+    display: flex;
+    flex-direction: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    background-color: #e8e7e7d5;
+    padding: 10px 35px;
+    border-left: 5px solid rgb(16, 7, 203);
+}
+.judul_text .logo{
+    width: 70px;
+    height: 70px;
+}
+.text_profil p{
+  font-size: 1.125em;
+  text-align: justify;
+
+}
+
+.profil_sekolah .logoprofil{
+    width: 600px;
+    height: 350px;
+    object-fit: cover;
+    box-shadow: 20px 20px 1px rgba(128, 128, 128, 0.592);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.profil_sekolah .logoprofil:hover{
+  transform: scale(1.05);
+  
+}
+
+.profil_sekolah .text_profil{
+    max-width: 600px;
+}
+
+.profil_sekolah .text_profil h1{
+    font-size: 2.5em;
+    
+}
+.profil_sekolah .text_profil span{
+    color: rgb(16, 7, 203);
+}
+/* akhir profil sekolah */
+
+
+
+
+/* STYLE TENTANG KAMI */
+
+.tentang_kami{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 0px;
+    height: 450px;
+    margin-top: 130px;
+    background-color: rgba(227, 240, 247, 0.836);
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    position: relative;
+   
+  }
+  
+.text_tentangkami{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    gap: 20px;
+    padding: 25px;
+    
+}
+.text_tentangkami h1{
+    font-size: 1.6875em;
+    background-color: #ffffffd5;
+    padding: 10px 35px;
+    border-left: 5px solid rgb(16, 7, 203);
+}
+.text_tentangkami p{
+    font-size: 1.125em;
+    text-align: justify;
+}
+
+
+.tentang_kami img{
+    width: 600px;
+    height: 300px; 
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 10px 10px 1px rgba(0, 0, 0, 0.136);
+    transition: all 0.3s ease;
+}
+.tentang_kami img:hover{
+    transform: scale(1.05);
+    
+}
+/*  AKHIR STYLE TENTANG KAMI */
+
+
+
+
+/* CARD KEGIATAN SEKOLAH */
+
+.kegiatan_sekolah{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 70px;
+  width: 100%;
+  background: linear-gradient(180deg, #ffffff, #d1e1edde);
+  height: 100vh;
+  
+}
+
+.katakata_kegiatan h1{
+  font-size: 2em;
+  background-color: #d6d5d5d5;
+  padding: 10px 50px;
+  border-left: 5px solid rgb(16, 7, 203);
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.activity-item {
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  perspective: 1000px;
+}
+
+.activity-item:hover {
+  transform: translateY(-15px) rotateX(10deg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.activity-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  filter: grayscale(20%);
+  transition: transform 0.4s, filter 0.4s;
+}
+
+.activity-item:hover .activity-image {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.activity-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+}
+
+.activity-item:hover .activity-overlay {
+  height: 100%;
+}
+
+.activity-text {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s;
+}
+
+.activity-item:hover .activity-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.activity-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.activity-description {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+
+.btn_akhir{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  text-decoration: none;
+}
+.animated-button {
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.animated-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.animated-button:active {
+  transform: scale(0.95);
+}
+
+.animated-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: all 0.5s ease;
+}
+
+.animated-button:hover::before {
+  left: 100%;
+}
+
+@keyframes slideIn {
+  from { 
+      opacity: 0; 
+      transform: translateY(50px);
+  }
+  to { 
+      opacity: 1; 
+      transform: translateY(0);
+  }
+}
+
+.activities-grid > * {
+  animation: slideIn 0.8s forwards;
+  opacity: 0;
+}
+
+.activities-grid > *:nth-child(1) { animation-delay: 0.2s; }
+.activities-grid > *:nth-child(2) { animation-delay: 0.4s; }
+.activities-grid > *:nth-child(3) { animation-delay: 0.6s; }
+
+/* AKHIR KEGIATAN SEKOLAH */
+
+/* style daftar guru */
+.daftar-guru {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3c4f62;
+  font-size: 1.3rem;
+  background-color: #e8e7e7d5;
+  padding: 10px 35px;
+  border-left: 5px solid rgb(16, 7, 203);
+  
+}
+#tenaga-pendidik {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 50px 100px 50px;
+  background-color: #f9f9f9;
+}
+.pendidik-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.pendidik {
+  width: 30%;
+  margin: 10px;
+  text-align: center;
+  background-color: #c9d7e7;
+  padding: 10px;
+  border-radius: 15px;
+}
+.pendidik-foto {
+  width:  100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* akhir style daftar guru */
+
+/* footer */
+
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+.footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+.footer-section {
+  text-align: left;
+  max-width: 300px;
+}
+.footer-section h4 {
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+.footer-section p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+.social-links a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+.social-links a i {
+  margin-right: 10px;
+  font-size: 1.25em;
+}
+.social-links a:hover {
+  color: #3498db;
+}
+.copyright {
+  background-color: #34495e;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+/* akhir footer */
+
+
+
+
+/* RESPONSIVE STYLE */
+
+@media screen and (max-width: 1024px) {
+  nav {
+    width: 100%;
+  }
+  
+.textCentered{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #f2f2f2;
+}
+.textCentered h1{
+  font-size: 2rem;
+  font-weight: 800;
+}
+  .profil_sekolah {
+      gap: 50px;
+  }
+
+  .profil_sekolah .logoprofil {
+      width: 400px;
+      height: 300px;
+  }
+
+  .tentang_kami {
+    margin-top: 100px;
+    padding: 15px;
+    gap: 20px;
+}
+
+.text_tentangkami,
+.tentang_kami img {
+    width: 350px;
+    max-width: 900px;
+}
+.kegiatan_sekolah {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 3rem;
+  margin-top: 50px;
+  padding: 30px 20px;
+}
+
+.katakata_kegiatan > h1 {
+  font-size: 2.5em;
+}
+.activities-grid{
+  gap: 1.5em;
+}
+.activity-item{
+  border-radius: 15px;
+  width: 14rem;
+}
+
+}
+
+
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+}
+
+nav .menu {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    width: 100%;
+    align-items: center;
+}
+nav .menu li a{
+  font-size: 1em;
+}
+nav .logo img {
+    max-width: 130px;
+}
+
+
+.textCentered{
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #f2f2f2;
+}
+.textCentered h1{
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.textCentered p{
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.textCentered button {
+  padding: 5px;
+  font-size: 0.5rem;
+}  
+
+.text_judul h1 {
+    font-size: 1.5rem;
+}
+
+.text_judul p {
+    font-size: 0.9rem;
+}
+
+  .profil_sekolah {
+    flex-direction: column;
+    gap: 60px;
+    margin: 50px auto;
+  }
+
+  .profil_sekolah .logoprofil {
+    width: 85%;
+    height: auto;
+    max-height: 400px;
+  }
+
+  .judul_text {
+    flex-direction: row;
+    text-align: center;
+    padding: 10px 20px;
+    width: 100%;
+  }
+
+  .judul_text .logo {
+    margin-bottom: 10px;
+  }
+
+  .profil_sekolah .text_profil h1 {
+    font-size: 2em;
+    width: 15em;
+    text-align: center;
+  }
+  .tentang_kami {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 80px;
+    gap: 30px;
+}
+
+.text_tentangkami {
+    padding: 20px 10px;
+    width: 100%;
+}
+
+.text_tentangkami h1 {
+    font-size: 1.5em;
+    padding: 10px 20px;
+}
+
+.text_tentangkami p {
+    font-size: 1.1em;
+}
+
+.tentang_kami img {
+    height: 250px;
+    width: 85%;
+}
+.kegiatan_sekolah {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 36rem 0;
+  gap: 3rem;
+
+  
+}
+
+.katakata_kegiatan > h1 {
+  font-size: 2.2em;
+}
+
+.katakata_kegiatan > p {
+  font-size: 0.9em;
+}
+
+.activities-grid{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+  align-items: center;
+}
+.activity-item{
+  width: 90%;
+  border-radius: 0;
+  height: auto;
+}
+.activity-item img{
+  width: 100%;
+  height: auto;
+}
+.activity-item h3{
+  font-size: 1.2em;
+}
+.activity-item p{
+  font-size: 0.9em;
+}
+.image-container {
+  height: 180px;
+}
+
+.image-container img {
+  height: 180px;
+}
+}
+
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 480px) {
+  body{
+   overflow-x: hidden;
+  }
+  nav{
+      flex-direction: column;
+      width: 100%;
+  }
+  nav .menu{
+    gap: 10px;
+  }
+
+  nav .logo img {
+      height: 3rem;
+  }
+
+  nav .menu li a {
+      font-size: 0.7em;
+  }
+  nav .menu .dropdown .dropbtn {
+    font-size: 0.7em;
+    padding: 5px;
+  }
+
+  .textCentered{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    color: #f2f2f2;
+  }
+  .textCentered h1{
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+  .textCentered p{
+    font-size: 0.6rem;
+    font-weight: 500;
+  }
+
+  .profil_sekolah {
+    width: 95%;
+    margin: 30px auto;
+}
+
+.profil_sekolah .text_profil h1 {
+    font-size: 1.8em;
+}
+.profil_sekolah img{
+  width: 70%;
+    height: 70%;
+}
+.profil_sekolah .text_profil {
+    width: 80%;
+}
+.profil_sekolah .text_profil h1 {
+    font-size: 1.5em;
+}
+.text_profil p {
+    font-size: 1em;
+}
+
+.judul_text .logo {
+    width: 50px;
+    height: 50px;
+}
+.tentang_kami {
+  width: 100%;
+  margin: 50px auto;
+  padding: 10px;
+}
+
+.text_tentangkami {
+  width: 90%;
+  padding: 10px;
+  gap: 15px;
+}
+
+.text_tentangkami h1 {
+  font-size: 1.3em;
+  padding: 8px 15px;
+}
+
+.text_tentangkami p {
+  font-size: 0.9em;
+}
+
+.tentang_kami img {
+  height: 200px;
+}
+.kegiatan_sekolah {
+  margin: 12rem 0;
+  padding: 25px 10px;
+  background-color: #2c3e50;
+  gap: 2.3rem;
+}
+
+.katakata_kegiatan > h1 {
+  font-size: 1.8em;
+}
+.activities-grid{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+  align-items: center;
+}
+.activity-item{
+  width: 90%;
+  height: auto;
+}
+.activity-item img{
+  width: 100%;
+  height: auto;
+}
+.activity-item h3{
+  font-size: 1.2em;
+}
+.activity-item p{
+  font-size: 0.9em;
+}
+#tenaga-pendidik .pendidik-container .pendidik img{
+height: 4rem;
+width: 4rem;
+flex-direction: column;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+#tenaga-pendidik .pendidik-container .pendidik{
+  width: 40%;
+  height: auto;
+}
+#tenaga-pendidik .pendidik-container .pendidik p{
+  font-size: 0.8em;
+}
+#tenaga-pendidik .pendidik-container .pendidik h3{
+  font-size: 0.9em;
+}
+.pendidik{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+}

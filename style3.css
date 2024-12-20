@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body {
+    font-family: poppins;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+.logobmw{
+    height: 70px;
+    width: 70px;
+}
+
+.video-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.video-section h3 {
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+
+.photo-section h3 {
+    color: #34495e;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.kegiatan_pramuka{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.kegiatan_rawat{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.kegiatan_masak{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.photo-item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.05);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo-item p {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.btn_akhir{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    text-decoration: none;
+}
+.animated-button {
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.animated-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.animated-button:active {
+    transform: scale(0.95);
+}
+
+.animated-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all 0.5s ease;
+}
+
+.animated-button:hover::before {
+    left: 100%;
+}
