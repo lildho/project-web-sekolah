@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Kegiatan Sekolah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: poppins;
+            background: linear-gradient(to right, #aaaaaad5, #e8e7e7d5);
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            align-items: center;
+            background-color: #072b43;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        header img{
+            height: 80px;
+        }
+        .activity-section {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.166);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .activity-section:hover {
+            transform: scale(1.02);
+        }
+        .activity-header {
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .activity-header1 {
+            background-color: #582908;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .activity-header2 {
+            background-color: #0c3587;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
+        .photo-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .photo-grid img:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+            cursor: pointer;
+        }
+        .activity-description {
+            padding: 20px;
+            text-align: justify;
+            background-color: #f9f9f9;
+
+        }
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            max-height: 80%;
+            object-fit: contain;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .btn_akhir{
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+        }
+        .animated-button {
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .animated-button:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .animated-button:active {
+            transform: scale(0.95);
+        }
+
+        .animated-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .animated-button:hover::before {
+            left: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/SMK BMW (1).png" alt="logo sekolah">
+
+        <h1>Dokumentasi Kegiatan Sekolah</h1>
+    </header>
+
+    <div class="container">
+        <!-- Kegiatan Pramuka -->
+        <div class="activity-section">
+            <div class="activity-header1">
+                <h2>Kegiatan LDKS</h2>
+            </div>
+            <div class="photo-grid" id="pramuka-grid">
+                <img src="img/kegpramuka2.jpeg" alt="Pramuka 1" onclick="openModal(this)">
+                <img src="img/kegpramuka1.jpeg" alt="Pramuka 2" onclick="openModal(this)">
+                <img src="img/kegpramuka4.jpeg" alt="Pramuka 3" onclick="openModal(this)">
+            </div>
+            <div class="activity-description">
+                <p>Kegiatan Latihan Dasar Kepemimpinan Siswa (LDKS) dan Perkemahan Jumat-Sabtu (Perjumsa) di tingkat SMK bertujuan untuk membentuk karakter, meningkatkan kedisiplinan, serta memperkuat jiwa kepemimpinan dan kebersamaan siswa. LDKS biasanya diisi dengan berbagai pelatihan seperti manajemen organisasi, komunikasi efektif, pengambilan keputusan, dan simulasi kepemimpinan, yang dirancang untuk mempersiapkan siswa menjadi pemimpin yang tangguh dan bertanggung jawab. Sementara itu, Perjumsa menggabungkan kegiatan pendidikan luar ruangan, seperti perkemahan, permainan tim, dan kegiatan kepramukaan, untuk melatih kemandirian, kerja sama, dan rasa peduli terhadap lingkungan. Melalui kombinasi kegiatan ini, siswa tidak hanya memperoleh pengalaman yang bermanfaat untuk pengembangan diri, tetapi juga menumbuhkan semangat persatuan dan kemampuan berkontribusi positif dalam lingkungan sekolah maupun masyarakat.</p>
+            </div>
+        </div>
+
+        <!-- Lomba Seni -->
+        <div class="activity-section">
+            <div class="activity-header">
+                <h2>Kegiatan diet pada pasien Gastritis</h2>
+            </div>
+            <div class="photo-grid" id="seni-grid">
+                <img src="img/kegmasak1.jpeg" alt="masak 1" onclick="openModal(this)">
+                <img src="img/kegmasak3.jpeg" alt="masak 2" onclick="openModal(this)">
+                <img src="img/kegmasak2.jpeg" alt="masak 3" onclick="openModal(this)">
+            </div>
+            <div class="activity-description">
+                <p>Kegiatan Praktikum membuat diet pada pasien Gastritis
+                    Gastritis, atau peradangan pada lapisan lambung, memerlukan perhatian khusus dalam pola makan untuk mencegah iritasi dan mempercepat proses penyembuhan. Kegiatan mengolah makanan bagi pasien gastritis bertujuan untuk menciptakan hidangan yang mudah dicerna, rendah asam, serta minim lemak dan bumbu yang tajam. Pemilihan bahan makanan menjadi hal yang sangat penting, seperti penggunaan sayuran yang tidak berserat kasar, daging tanpa lemak, serta karbohidrat kompleks seperti nasi atau kentang. Proses memasak juga harus diperhatikan, di mana metode seperti merebus, mengukus, atau memanggang lebih disarankan dibandingkan menggoreng atau memanggang dengan suhu tinggi. Hindari penggunaan bahan-bahan yang merangsang produksi asam lambung, seperti cabai, cuka, tomat, dan makanan yang digoreng.  
+                    Selain itu, makanan yang diolah untuk pasien gastritis sebaiknya memiliki tekstur yang lembut dan suhu yang hangat, karena makanan yang terlalu panas atau terlalu dingin dapat memperparah gejala. Penyajian makanan dalam porsi kecil namun sering juga dianjurkan, untuk mencegah lambung bekerja terlalu keras. Kegiatan ini juga melibatkan perhatian terhadap pengaturan jadwal makan yang teratur agar produksi asam lambung tetap stabil. Dengan pendekatan yang cermat dalam mengolah dan menyajikan makanan, pasien gastritis dapat menikmati makanan yang aman, bernutrisi, dan mendukung proses pemulihan tanpa memicu ketidaknyamanan.</p>
+            </div>
+        </div>
+
+        <!-- Bakti Sosial -->
+        <div class="activity-section">
+            <div class="activity-header2">
+                <h2>Kegiatan praktikum keperawatan</h2>
+            </div>
+            <div class="photo-grid" id="bakti-sosial-grid">
+                <img src="img/kegrawat1.jpeg" alt="rawat 1" onclick="openModal(this)">
+                <img src="img/kegrawat2.jpeg" alt="rawat 2" onclick="openModal(this)">
+                <img src="img/kegrawat3.jpeg" alt="rawat 3" onclick="openModal(this)">
+            </div>
+            <div class="activity-description">
+                <p>Kegiatan praktikum lapangan uji kelayakan kompetensi keperawatan tingkat SMK merupakan salah satu program penting dalam mempersiapkan siswa menghadapi dunia kerja di bidang kesehatan. Kegiatan ini bertujuan untuk menguji keterampilan, pengetahuan, dan sikap profesional siswa dalam situasi praktik nyata. Siswa akan menjalani simulasi atau praktik langsung di fasilitas kesehatan seperti rumah sakit, puskesmas, atau klinik, dengan pengawasan dari guru pembimbing atau tenaga medis profesional. Dalam uji kompetensi ini, siswa akan mempraktikkan berbagai prosedur keperawatan, seperti pengukuran tanda vital, pemberian perawatan dasar, hingga komunikasi terapeutik dengan pasien, sesuai standar operasional yang berlaku.
+                Melalui kegiatan ini, siswa tidak hanya diuji kemampuannya dalam menerapkan teori yang telah dipelajari di kelas, tetapi juga dilatih untuk bekerja secara etis, cekatan, dan tanggap terhadap kebutuhan pasien. Evaluasi dilakukan untuk mengukur sejauh mana siswa telah memenuhi kriteria kompetensi yang ditetapkan, baik dari segi teknis maupun soft skills seperti empati dan kerja sama tim. Dengan demikian, kegiatan ini menjadi langkah strategis dalam memastikan lulusan SMK keperawatan siap bersaing di dunia kerja sekaligus memberikan pelayanan kesehatan yang berkualitas.</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn_akhir">
+            <button class="animated-button">
+                back to home
+            </button>
+        </a>
+
+    </div>
+
+    
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(img) {
+            var modal = document.getElementById('imageModal');
+            var modalImg = document.getElementById('modalImage');
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById('imageModal');
+            modal.style.display = "none";
+        }
+
+    
+        window.onclick = function(event) {
+            var modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

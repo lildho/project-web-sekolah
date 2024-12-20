@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+        <div class="header_pendaftaran">
+            <img src="img/Logo_BMW Latar Belakang Kosong.png" alt="logo sekolah" class="logobmw">
+            <h1>Pendaftaran calon siswa/i SMK Bhakti Medika Wiyata</h1>
+            <div class="shadowH1"></div>
+        </div>       
+
+  <div class="text_pendaftaran">  
+            <p>SMK bhakti Medika Wiyata membuka pendaftaran siswa baru tahun ajaran 2025/2026. Segera daftarkan putra/putri Anda dan jadilah bagian dari generasi muda yang siap menghadapi tantangan masa depan. Dengan program keahlian yang relevan dengan dunia kerja, fasilitas modern, dan tenaga pengajar yang berkualitas, SMK bhakti medika wiyata siap mencetak lulusan yang unggul dan siap bersaing. Jangan lewatkan kesempatan emas ini! Segera kunjungi form pendaftaran kami untuk informasi lebih lanjut dan persyaratan pendaftaran Semangat calon siswa/i SMK BMW</p>
+        </div>
+
+    
+    
+        <div class="container_pendaftaran">
+            <div class="card">
+                <img src="img/ppdbonline.png" alt="poster ppdb" class="card-image" id="cardImage">
+                <div class="card-content">
+                    <h2 class="card-title">Form persyaratan</h2>
+                    <p class="card-description">
+                        Formulir persyaratan pendaftaran SMK Bhakti Medika Wiyata 2025/2026
+                    </p>
+                    <button class="card-button" id="fullscreenButton">Lihat Gambar Penuh</button>
+                </div>
+            </div>
+        
+            <div id="fullscreenOverlay">
+                <img id="fullscreenImage" src="" alt="Gambar Fullscreen">
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon"> 
+                        <img src="img/Screenshot 2024-11-27 185853.png" alt="form pendaftaran">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Dokumen Google Drive</div>
+                    <p class="card-description">
+                        Dokumen ini berisi informasi penting untuk mendaftar sebagai calon siswa/i.
+                        Silakan klik tombol di bawah untuk mengakses dokumen asli.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://drive.google.com/file/d/1TZPXzcADS2wsimDe3HhPY37Mf_EOrXim/view" 
+                    target="_blank" 
+                    class="btn btn-primary">Buka Dokumen</a>
+                    <a href="#" class="btn btn-secondary">Pratinjau</a>
+                </div>
+            </div>
+        
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon"> 
+                        <img src="img/Screenshot 2024-11-27 182924.png" alt="formulir pendaftaran">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="card-title">Formulir Pendaftaran</div>
+                    <p class="card-description">
+                        Formulir pendaftaran yang dibutuhkan untuk mendaftar
+                        Silakan klik tombol di bawah untuk mengakses dokumen asli.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScvmNqf7B9IgNrZKeElu-QEBapwLRViJ1n3naWMhyhJdB3XSQ/viewform" 
+                    target="_blank" 
+                    class="btn btn-primary">Buka Dokumen</a>
+                    <a href="#" class="btn btn-secondary">Pratinjau</a>
+                </div>
+            </div>
+        </div>
+        
+
+    <div class="containerbtn">
+        <button class="btn3"><a href="index.html">Back to Home</a></button>
+    </div>
+
+
+
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const cardImage = document.getElementById('cardImage');
+                const fullscreenButton = document.getElementById('fullscreenButton');
+                const fullscreenOverlay = document.getElementById('fullscreenOverlay');
+                const fullscreenImage = document.getElementById('fullscreenImage');
+    
+                // Fungsi untuk membuka fullscreen
+                function openFullscreen(imageSrc) {
+                    fullscreenImage.src = imageSrc;
+                    fullscreenOverlay.style.display = 'flex';
+                }
+    
+                // Tambahkan event listener ke gambar
+                cardImage.addEventListener('click', () => {
+                    openFullscreen(cardImage.src);
+                });
+    
+                // Tambahkan event listener ke tombol
+                fullscreenButton.addEventListener('click', () => {
+                    openFullscreen(cardImage.src);
+                });
+    
+                // Tutup fullscreen saat mengklik overlay
+                fullscreenOverlay.addEventListener('click', (event) => {
+                    if (event.target === fullscreenOverlay) {
+                        fullscreenOverlay.style.display = 'none';
+                    }
+                });
+            });
+        </script>
+          
+            
+
+
+</body>
+</html>
